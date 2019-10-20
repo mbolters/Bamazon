@@ -75,3 +75,23 @@ connection.connect(function(err) {
                 });
             });
     };
+
+    var completePurchase = function(availableStock, price, selectedProductID, selectedStock) {
+
+	var updatedStockQuantity = availableStock - selectedStock;
+	var totalPrice = price * selectedStock;
+
+    console.log("Remaining stock is now: " + updatedStockQuantity);
+
+	var query = "UPDATE products SET ? WHERE ?";
+    
+    connection.query(query, [{
+		stock_quantity: updatedStockQuantity,
+	}, {
+		item_id: selectedProductID
+	}], function(err, res) {
+		 if (err) console.log (err);
+        console.log("Yay, your purchase is complete.");
+        console.log("You're mythical payment has been received in the amount of : $" + parseInt(totalPrice));
+	});
+};
