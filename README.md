@@ -11,9 +11,9 @@ Bamazon uses these node modules: ```inquirer``` and ```mysql```.
 
 To install just run:
 
-```npm init```
-```npm i node```
-```npm i inquirer```
+```npm init```,
+```npm i node```,
+```npm i inquirer```,
 ```npm i mysql```
 
 ## Customer Module
