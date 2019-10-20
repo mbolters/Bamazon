@@ -4,7 +4,7 @@ This is bamazon. Bamazon, as it's name suggests, is a simple e-commerce app, or 
 
 ### Check out this video to see how it works: [bamazonVid](./bamazonVid.mov)
 
-Bamazon uses some third-party node modules, has it's own modules, and connects to a mysql database to store and retrieve product and department information.
+Bamazon uses some third-party node modules and connects to a mysql database to store and retrieve product and department information.
 
 ## Third-party Node Modules
 Bamazon uses these node modules: ```inquirer``` and ```mysql```.
