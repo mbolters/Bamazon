@@ -1,6 +1,6 @@
 # Bamazon
 
-This is bamazon. Bamazon, as it's name suggests, is a simple e-commerce app, or at least the backend for it. Check out this video to see how it works: [bamazonVid]
+This is bamazon. Bamazon, as it's name suggests, is a simple e-commerce app, or at least the backend for it. Check out this video to see how it works: [bamazonVid](./bamazonVid.mov)
 
 Bamazon uses some third-party node modules, has it's own modules, and connects to a mysql database to store and retrieve product and department information.
 
