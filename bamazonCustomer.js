@@ -60,16 +60,16 @@ connection.connect(function(err) {
                 return false;
             }
         }]).then(function(answer){
-                var query = "Select product_name, stock_quantity, price, department_name FROM products WHERE ?";
+                var query = "Select item_id, product_name, stock_quantity, price, department_name FROM products WHERE ?";
                 connection.query(query, { item_id: answer.productID}, function(err, res) {
                     if (err) console.log(err);
 
                     var available_stock = res[0].stock_quantity;
                     var price_per_unit = res[0].price;
-                    var productDepartment = res[0].department_name;
+                    var productId = res[0].item_id;
 
                     if (available_stock >= answer.stock) {
-                        completePurchase(available_stock, price_per_unit, productDepartment, answer.productID, answer.stock);
+                        completePurchase(available_stock, price_per_unit, productId, answer.stock);
                     } else {
                         console.log("Insufficient stock!");
                         chooseProduct();
@@ -84,13 +84,13 @@ connection.connect(function(err) {
 	var totalPrice = price * selectedStock;
 
     console.log("Remaining stock is now: " + updatedStockQuantity);
-
 	var query = "UPDATE products SET ? WHERE ?";
-    
+
     connection.query(query, [{
 		stock_quantity: updatedStockQuantity,
 	}, {
-		item_id: selectedProductID
+        item_id: selectedProductID
+        
 	}], function(err, res) {
 		 if (err) console.log (err);
         console.log("Yay, your purchase is complete.");
