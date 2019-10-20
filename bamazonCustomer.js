@@ -34,3 +34,29 @@ connection.connect(function(err) {
             chooseProduct();
         })
     };
+
+    function chooseProduct() {
+        inquirer
+          .prompt([{
+            name: "productID",
+            type: "input",
+            message: "What is the product ID of the item you would like to purchase?",
+            validate: function(value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        }, {
+            name: "stock",
+            type: "input",
+            message: "How many would you like to buy?",
+            validate: function(value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        }]).then(function(answer){
+
+        })
