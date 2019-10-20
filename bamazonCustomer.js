@@ -1,11 +1,13 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
+const myConfig = require('./config');
+
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: config.password,
+  password: myConfig.config.password,
   database: "products_DB"
 });
 
