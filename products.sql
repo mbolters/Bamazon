@@ -3,8 +3,6 @@ CREATE DATABASE products_db;
 
 USE products_db;
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Giraffe730*';
-
 CREATE TABLE products (
   item_id INTEGER(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   product_name VARCHAR(100) NOT NULL,
